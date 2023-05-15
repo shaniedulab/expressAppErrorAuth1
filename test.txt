@@ -1,0 +1,112 @@
+/user/createUser:
+    post:
+      summary: "create new user"
+      description: "Create new User description"
+      requestBody:
+        description: "Created user object"
+        content:
+          application/json:
+            schema:
+              type: "object"
+                properties:
+                  firstName:
+                    type: "string"
+                  lastName:
+                    type: "string"
+        required: "true" 
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Successful deleted user"
+          scheme: 
+            type: "array"
+              items:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                  firstName:
+                    type: "string"
+                  lastName:
+                    type: "string"
+                
+
+
+///////
+/user/createUser:
+    post:
+      summary: "create new user"
+      description: "Create new User description"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: body
+          name: abc
+          description: "User object that needs to be created"
+          required: true
+          schema:
+            type: "object"
+              properties:
+                firstName:
+                  type: "string"
+                lastName:
+                  type: "string"            
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Successful updated User"
+          scheme: 
+            type: "array"
+              items:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                  firstName:
+                    type: "string"
+                  lastName:
+                    type: "string"
+                    
+////////////////////////////////////////////////////////////////
+  /user/updateUser:
+    put:
+      summary: "update user"
+      description: "update user with id"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: body
+          name: abc
+          description: "User object that needs to be created"
+          required: true
+          schema:
+            type: "object"
+              properties:
+                firstName:
+                  type: "string"
+                lastName:
+                  type: "string"
+        - in: "query"
+          name: "id"
+          type: "integer"
+          required: "true"
+          schema: 
+            type: "integer"
+      produces:
+        - "application/json"
+      responses: 
+        200:
+          description: "Successful deleted user"
+          scheme: 
+            type: "array"
+              items:
+                type: "object"
+                properties:
+                  id:
+                    type: "integer"
+                  firstName:
+                    type: "string"
+                  lastName:
+                    type: "string"              

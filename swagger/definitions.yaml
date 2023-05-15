@@ -1,0 +1,22 @@
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: "integer"
+        example: "1"
+      firstName:
+        type: "string"
+        example: "akash"
+      lastName:
+        type: "string"
+        example: "maurya"
+  internalServerError:
+    type: object
+      properties:
+      status:
+        type: integer
+        example: 500
+      message:
+        type: string
+        example: "Internal Server Error"
